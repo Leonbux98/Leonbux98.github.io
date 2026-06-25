@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Leon Buxhovi — IT professional transitioning into cloud infrastructure and DevOps. ITIL 4 certified, Azure AI Fundamentals, hands-on with Terraform, Docker, Kubernetes, and CI/CD." />
+  <meta property="og:title" content="Leon Buxhovi" />
+  <meta property="og:description" content="IT professional transitioning into cloud infrastructure and DevOps. Based in London." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://github.com/Leonbux98" />
+  <link rel="canonical" href="https://github.com/Leonbux98" />
+  <title>Leon Buxhovi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  </noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --bg-alt: #0d1117;
+      --bg-card: #111419;
+      --border: #1e2330;
+      --border-light: #21262d;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted: #3d4451;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --blue-btn: #1f6feb;
+      --blue-btn-hover: #388bfd;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    body {
+      background: var(--bg);
+      color: #c9d1d9;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,15,20,0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .logo .dim { color: var(--text-muted); }
+
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 0;
+    }
+
+    #hero { padding: 5rem 0 4rem; }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before { content: '> '; color: var(--text-muted); }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 strong { font-weight: 500; color: #fff; }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 2rem;
+    }
+
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      color: var(--accent);
+      background: var(--bg-alt);
+    }
+
+    .section-heading {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .project-card {
+      background: var(--bg);
+      padding: 1.5rem;
+      transition: background 0.15s;
+    }
+
+    .project-card:hover { background: var(--bg-card); }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+      gap: 1rem;
+    }
+
+    .project-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .project-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .status-live { background: #0d2d1a; color: #3fb950; border: 1px solid #1a3d24; }
+    .status-wip  { background: #1a1a00; color: #d29922; border: 1px solid #2d2600; }
+    .status-arch { background: #1a1a1f; color: #6e7681; border: 1px solid var(--border-light); }
+
+    .project-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .lang-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lang-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+    .project-links { display: flex; gap: 12px; margin-left: auto; }
+
+    .project-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s;
+    }
+
+    .project-link:hover { color: var(--accent); }
+    .project-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .about-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .about-block-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-block .value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #c9d1d9;
+    }
+
+    .about-block p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .certs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 0.5rem;
+    }
+
+    .cert {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #c9d1d9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cert-year {
+      font-size: 10px;
+      color: var(--text-muted);
+      min-width: 30px;
+    }
+
+    .social-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1.75rem; }
+
+    .social-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 8px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .social-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .social-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .field-wrap { display: flex; flex-direction: column; gap: 6px; }
+
+    .field-wrap label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--bg-alt);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 10px 12px;
+      color: #c9d1d9;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      transition: border-color 0.15s;
+      resize: vertical;
+      width: 100%;
+    }
+
+    .contact-form input:focus-visible,
+    .contact-form textarea:focus-visible {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(88,166,255,0.15);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: var(--text-muted); }
+
+    .send-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 10px 20px;
+      background: var(--blue-btn);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      align-self: flex-start;
+      letter-spacing: 0.03em;
+      transition: background 0.15s;
+    }
+
+    .send-btn:hover { background: var(--blue-btn-hover); }
+    .send-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .form-success {
+      display: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--green);
+      padding: 10px 0;
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    footer .heart { color: var(--green); }
+
+    @media (max-width: 600px) {
+      .site-nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#" class="logo"><span class="dim" aria-hidden="true">//</span> leon.buxhovi</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero-eyebrow">open to cloud &amp; DevOps roles</p>
+        <h1 id="hero-heading">Leon Buxhovi —<br><strong>cloud, infra &amp; DevOps.</strong></h1>
+        <p class="hero-sub">IT professional with 5 years in enterprise support, moving into cloud infrastructure and DevOps. ITIL 4 certified, Azure AI Fundamentals certified, hands-on with Terraform, Docker, Kubernetes, and CI/CD pipelines.</p>
+        <ul class="tags" role="list" aria-label="Tech stack">
+          <li class="tag">Azure</li>
+          <li class="tag">Terraform</li>
+          <li class="tag">Docker</li>
+          <li class="tag">Kubernetes</li>
+          <li class="tag">Linux</li>
+          <li class="tag">Python</li>
+          <li class="tag">Bash</li>
+          <li class="tag">CI/CD</li>
+          <li class="tag">PowerShell</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 class="section-heading" id="projects-heading">projects</h2>
+        <div class="projects">
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">SafeToEat</h3>
+              <span class="project-status status-wip" aria-label="Status: in progress">in progress</span>
+            </div>
+            <p class="project-desc">A consumer-facing application to help people with allergies identify safe food options. Full-stack build with cloud hosting and API integration — independently designed and developed from scratch.</p>
+            <div class="project-footer">
+              <span class="lang-label"><span class="lang-dot" style="background:#3572A5" aria-hidden="true"></span> Python</span>
+              <span class="lang-label"><span class="lang-dot" style="background:#0078d4" aria-hidden="true"></span> Azure</span>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/Leonbux98/SafeToEat" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">coderco-azure-project</h3>
+              <span class="project-status status-live" aria-label="Status: complete">complete</span>
+            </div>
+            <p class="project-desc">Azure infrastructure project provisioned with Terraform and deployed via CI/CD pipelines. Covers IaC principles, reusable module patterns, and automated deployment workflows using GitHub Actions and YAML.</p>
+            <div class="project-footer">
+              <span class="lang-label"><span class="lang-dot" style="background:#7b42bc" aria-hidden="true"></span> Terraform</span>
+              <span class="lang-label"><span class="lang-dot" style="background:#0078d4" aria-hidden="true"></span> Azure</span>
+              <span class="lang-label"><span class="lang-dot" style="background:#f05133" aria-hidden="true"></span> YAML</span>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/Leonbux98/coderco-azure-project" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">home-lab — linux &amp; networking</h3>
+              <span class="project-status status-live" aria-label="Status: ongoing">ongoing</span>
+            </div>
+            <p class="project-desc">Linux VMs configured with DNS, routing, SSH, firewall rules, and remote connectivity. A self-directed lab environment for building real infrastructure skills outside of work.</p>
+            <div class="project-footer">
+              <span class="lang-label"><span class="lang-dot" style="background:#fcc624" aria-hidden="true"></span> Linux</span>
+              <span class="lang-label"><span class="lang-dot" style="background:#4EAA25" aria-hidden="true"></span> Bash</span>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/Leonbux98" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> github</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">containerisation &amp; orchestration</h3>
+              <span class="project-status status-live" aria-label="Status: complete">complete</span>
+            </div>
+            <p class="project-desc">Deployed and managed containerised applications using Docker and Kubernetes — multi-container orchestration, scaling, and service networking across local and cloud environments.</p>
+            <div class="project-footer">
+              <span class="lang-label"><span class="lang-dot" style="background:#2496ed" aria-hidden="true"></span> Docker</span>
+              <span class="lang-label"><span class="lang-dot" style="background:#326ce5" aria-hidden="true"></span> Kubernetes</span>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/Leonbux98" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> github</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 class="section-heading" id="about-heading">about</h2>
+        <div class="about-grid">
+          <div class="about-block">
+            <p class="about-block-label">// location</p>
+            <p class="value">London, UK 🇬🇧</p>
+          </div>
+          <div class="about-block">
+            <p class="about-block-label">// experience</p>
+            <p class="value">5 years</p>
+          </div>
+          <div class="about-block" style="grid-column: 1 / -1;">
+            <p class="about-block-label">// background</p>
+            <p>Started in IT service desk at Hyde Housing Association, supporting a 1,200+ user enterprise environment and leading Major Incident coordination. Now actively building cloud and DevOps skills through hands-on projects — Terraform, Docker, Kubernetes, CI/CD, and Azure — with a goal of moving into infrastructure and cloud engineering.</p>
+          </div>
+          <div class="about-block" style="grid-column: 1 / -1;">
+            <p class="about-block-label">// certifications</p>
+            <div class="certs">
+              <span class="cert"><span class="cert-year">2025</span> Microsoft Certified: Azure AI Fundamentals (AI-900)</span>
+              <span class="cert"><span class="cert-year">2024</span> ITIL 4 Foundation – IT Service Management</span>
+              <span class="cert"><span class="cert-year">2023</span> Introduction to Azure – Microsoft</span>
+              <span class="cert"><span class="cert-year">2021</span> BSc Economics and Accounting (2:1) – Brunel University London</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 class="section-heading" id="contact-heading">contact</h2>
+
+        <nav aria-label="Social links">
+          <ul class="social-row" role="list">
+            <li>
+              <a class="social-btn" href="https://github.com/Leonbux98" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-github" aria-hidden="true"></i> GitHub
+              </a>
+            </li>
+            <li>
+              <a class="social-btn" href="https://www.linkedin.com/in/leon-buxhovi" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a class="social-btn" href="mailto:lbuxhovi@yahoo.com">
+                <i class="ti ti-mail" aria-hidden="true"></i> lbuxhovi@yahoo.com
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field-wrap">
+              <label for="name">// name</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div class="field-wrap">
+              <label for="email">// email</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="field-wrap">
+            <label for="message">// message</label>
+            <textarea id="message" name="message" rows="4" placeholder="What are you working on?" required></textarea>
+          </div>
+          <button type="submit" class="send-btn">send_message() →</button>
+          <p class="form-success" id="formSuccess" role="status" aria-live="polite">// message sent. i'll get back to you soon.</p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Leon Buxhovi &nbsp;·&nbsp; London &nbsp;·&nbsp; <span class="heart" aria-label="love">♥</span> cloud &amp; DevOps &nbsp;·&nbsp; 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) return;
+
+      fetch('https://formspree.io/f/mvzjklod', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      document.getElementById('formSuccess').style.display = 'block';
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
